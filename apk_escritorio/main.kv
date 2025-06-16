@@ -1,0 +1,203 @@
+# Reglas globales
+<Label>:
+    font_size: '16sp'
+    # font_name: 'fuentes/Montserrat-Regular.ttf'
+    color: 1, 1, 1, 1  # texto blanco
+
+<Button>:
+    font_size: '18sp'
+    # font_name: 'fuentes/Montserrat-Bold.ttf'
+    # background_normal: ''
+    # background_color: 0.2, 0.6, 0.86, 1  # azul claro
+    # color: 1, 1, 1, 1  # texto blanco
+
+<MainLayout>:
+    orientation: 'horizontal'
+
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint_x: 0.4  # Ocupa el 40% del ancho total
+        
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: 0.1  # Ocupa el 10% del alto total
+
+            # Agregar un canvas para fondo
+            canvas.before:
+                Color:
+                    rgba: 0, 0.5, 0.8, 1  # Color azul con opacidad completa (RGBA)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+            Label:
+                text: 'Trabajo de Fin de Grado Lucía Bayo Monedero\nAPLICACIÓN DE ESCRITORIO:\nENTRENADOR PERSONAL'
+                halign: 'center'
+                valign: 'middle'
+        
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: 0.15  # Ocupa el 15% del alto total
+
+            # Agregar un canvas para fondo
+            canvas.before:
+                Color:
+                    rgba: 0, 0.5, 0.8, 1  # Color azul con opacidad completa (RGBA)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            Button:
+                text: 'Iniciar'
+                on_press: root.btnIniciar_click()
+            Button:
+                text: 'Terminar'
+                on_press: root.btnTerminar_click()
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: 0.15  # Ocupa el 15% del alto total
+
+            # Agregar un canvas para fondo
+            canvas.before:
+                Color:
+                    rgba: 0, 0.5, 0.8, 1  # Color azul con opacidad completa (RGBA)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            Button:
+                text: 'Bíceps'
+                on_press: root.btnBiceps_click()
+            Button:
+                text: 'Flexiones'
+                on_press: root.btnFlexiones_click()
+            Button:
+                text: 'Sentadillas'
+                on_press: root.btnSentadillas_click()
+            Button:
+                text: 'Zancada\natrás'
+                text_size: self.size
+                halign: 'center'
+                valign: 'middle'
+                on_press: root.btnZancadaAtras_click()
+            Button:
+                text: 'Crunch\nabdominal'
+                text_size: self.size
+                halign: 'center'
+                valign: 'middle'
+                on_press: root.btnCrunchAbdominal_click()
+            Button:
+                text: 'Dominadas'
+                on_press: root.btnDominadas_click()
+
+        
+
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: 0.05  # Ocupa el 5% del alto total
+		# Agregar un canvas para fondo
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0.8, 1  # Color azul con opacidad completa (RGBA)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            # height: self.minimum_height
+            Label:
+                text: 'CONTADOR DEL NÚMERO REPETICIONES DE LOS EJERCICIOS'
+
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: 0.55  # Ocupa el 55% del alto total
+
+            # Agregar un canvas para fondo
+            canvas.before:
+                Color:
+                    rgba: 0, 0.5, 0.8, 1  # Color azul con opacidad completa (RGBA)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+            BoxLayout:
+                orientation: 'vertical'
+                # height: self.minimum_height
+                Label:
+                    text: 'Bíceps brazo derecho'
+                Label:
+                    text: 'Bíceps brazo izquierdo'
+                Label:
+                    text: 'Bíceps totales'
+                Label:
+                    text: 'Flexiones completas'
+                Label:
+                    text: 'Flexiones no completas'
+                Label:
+                    text: 'Sentadillas completas'
+                Label:
+                    text: 'Sentadillas no completas'
+                Label:
+                    text: 'Zancada atrás pierna derecha'
+                Label:
+                    text: 'Zancada atrás pierna izquierda'
+                Label:
+                    text: 'Zancada atrás totales'
+                Label:
+                    text: 'Abdominales'
+                Label:
+                    text: 'Dominadas completas'
+                Label:
+                    text: 'Dominadas no completas'
+
+            BoxLayout:
+                orientation: 'vertical'
+                # height: self.minimum_height
+                Label:
+                    id: etiq_contador_biceps_der
+                    text: "0"
+                Label:
+                    id: etiq_contador_biceps_izq
+                    text: "0"
+                Label:
+                    id: etiq_contador_biceps_tot
+                    text: "0"
+                Label:
+                    id: etiq_contador_flexiones_completas
+                    text: "0"
+                Label:
+                    id: etiq_contador_flexiones_nocompletas
+                    text: "0"
+                Label:
+                    id: etiq_contador_sentadillas_completas
+                    text: "0"
+                Label:
+                    id: etiq_contador_sentadillas_nocompletas
+                    text: "0"
+                Label:
+                    id: etiq_contador_zatras_der
+                    text: "0"
+                Label:
+                    id: etiq_contador_zatras_izq
+                    text: "0"
+                Label:
+                    id: etiq_contador_zatras_tot
+                    text: "0"
+                Label:
+                    id: etiq_contador_abdominales_der
+                    text: "0"
+                Label:
+                    id: etiq_contador_dominadas_completas
+                    text: "0"
+                Label:
+                    id: etiq_contador_dominadas_nocompletas
+                    text: "0"
+     
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint_x: 0.5  # Ocupa el 50% del ancho total
+
+        # Aquí se mostrará la cámara
+        Image:
+            id: camera_feed
+            allow_stretch: True
+            keep_ratio: False
